@@ -18,6 +18,7 @@ export async function photoGrid(el: HTMLDivElement) {
     imgWrapper.setAttribute("class", "img-wrapper");
     const img = document.createElement("img");
     img.setAttribute("src", photo.url);
+    img.setAttribute("alt", photo.title);
     imgWrapper.appendChild(img);
     el!.appendChild(imgWrapper);
   }
