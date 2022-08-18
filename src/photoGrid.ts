@@ -1,19 +1,7 @@
-export interface Photo {
-  albumId: number;
-  id: number;
-  thumbnailUrl: string;
-  title: string;
-  url: string;
-}
+import { getPhotos } from "./api";
 
 export async function setupPhotoGrid(el: HTMLDivElement) {
-  const photos: Photo[] = await fetch(
-    "https://jsonplaceholder.typicode.com/albums/1/photos"
-  )
-    .then((response) => response.json())
-    .catch((err) => console.log(err));
-
-  for (const photo of photos) {
+  for (const photo of await getPhotos()) {
     const imgWrapper = document.createElement("figure");
     imgWrapper.setAttribute("class", "img-wrapper");
     const img = document.createElement("img");
