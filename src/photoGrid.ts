@@ -1,4 +1,4 @@
-interface Photo {
+export interface Photo {
   albumId: number;
   id: number;
   thumbnailUrl: string;
@@ -6,7 +6,7 @@ interface Photo {
   url: string;
 }
 
-export async function photoGrid(el: HTMLDivElement) {
+export async function setupPhotoGrid(el: HTMLDivElement) {
   const photos: Photo[] = await fetch(
     "https://jsonplaceholder.typicode.com/albums/1/photos"
   )

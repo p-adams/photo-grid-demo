@@ -1,5 +1,5 @@
 import "./style.css";
-import { photoGrid } from "./photoGrid";
+import { setupPhotoGrid } from "./photoGrid";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div class="photo-grid-demo-container">
@@ -8,4 +8,4 @@ document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   </div>
 `;
 
-photoGrid(document.querySelector<HTMLDivElement>("#photo-grid")!);
+setupPhotoGrid(document.querySelector<HTMLDivElement>("#photo-grid")!);
