@@ -57,6 +57,7 @@ h1 {
   outline: 1px solid lightgray;
   display: flex;
   flex-direction: column;
+  padding: 4px;
 }
 
 .card-wrapper img {
