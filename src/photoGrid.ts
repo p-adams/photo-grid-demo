@@ -14,7 +14,7 @@ export async function photoGrid(el: HTMLDivElement) {
     .catch((err) => console.log(err));
 
   for (const photo of photos) {
-    const imgWrapper = document.createElement("div");
+    const imgWrapper = document.createElement("figure");
     imgWrapper.setAttribute("class", "img-wrapper");
     const img = document.createElement("img");
     img.setAttribute("src", photo.url);
