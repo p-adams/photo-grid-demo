@@ -2,6 +2,7 @@ import { getPhotos } from "./api";
 
 export async function setupPhotoGrid(el: HTMLDivElement) {
   for (const photo of await getPhotos()) {
+    // TODO: use photo card element
     const imgWrapper = document.createElement("figure");
     imgWrapper.setAttribute("class", "img-wrapper");
     const img = document.createElement("img");
