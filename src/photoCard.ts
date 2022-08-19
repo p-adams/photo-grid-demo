@@ -12,11 +12,15 @@ export function setupPhotoCard(photo: Photo): HTMLElement {
   const card = createEl("figure", [{ name: "class", value: "card-wrapper" }]);
 
   const img = createEl("img", [
-    { name: "src", value: photo.url },
+    { name: "src", value: photo.thumbnailUrl },
     { name: "alt", value: photo.title },
   ]);
 
+  const title = createEl("h3", [{ name: "class", value: "title" }]);
+  title.innerText = photo.title;
+
   card.appendChild(img);
+  card.appendChild(title);
   // TODO: implement card flip
   function handleFlipCard() {}
   card.addEventListener("click", handleFlipCard);
