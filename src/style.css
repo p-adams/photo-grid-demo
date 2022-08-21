@@ -51,6 +51,7 @@ h1 {
 #photo-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
 }
 
 .card-container {
@@ -66,7 +67,7 @@ h1 {
 .front,
 .back {
   width: 320px;
-  height: 480px;
+  height: 380px;
 }
 
 .card-wrapper {
@@ -83,7 +84,6 @@ h1 {
 .front,
 .back {
   backface-visibility: hidden;
-
   position: absolute;
   top: 0;
   left: 0;
