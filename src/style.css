@@ -57,15 +57,22 @@ h1 {
   perspective: 1000px;
 }
 
-.card-container:hover .card-wrapper {
+.card-container:hover .card-wrapper,
+.card-container.hover .card-wrapper {
   transform: rotateY(180deg);
+}
+
+.card-wrapper,
+.front,
+.back {
+  width: 320px;
+  height: 480px;
 }
 
 .card-wrapper {
   outline: 1px solid lightgray;
   display: flex;
   flex-direction: column;
-  height: 400px;
   padding: 4px;
   position: relative;
   text-align: center;
@@ -73,23 +80,29 @@ h1 {
   transform-style: preserve-3d;
 }
 
-.card-wrapper.front .card-wrapper.back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden; /* Safari */
+.front,
+.back {
   backface-visibility: hidden;
+
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.card-wrapper.front img {
+.front {
+  z-index: 2;
+  transform: rotateY(0deg);
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.card-wrapper .front img {
   height: 60%;
 }
 
-.card-wrapper.back .title {
-  display: none;
-}
-
-.card-wrapper.back img {
+.card-wrapper .back img {
   width: 100%;
   height: 100%;
   object-fit: fill;
